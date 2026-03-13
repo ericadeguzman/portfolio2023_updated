@@ -1,0 +1,125 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*------------------- CUSTOM FONTS ------------------- */
+
+
+@font-face {
+  font-family: 'porter-sans-inline-block';
+  font-style: normal;
+  font-weight: normal;
+  src: local('fonts/porter-sans-inline-block'), url('fonts/porter-sans-inline-block.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'porter-sans-inline-block-webfont';
+  font-style: normal;
+  font-weight: normal;
+  src: local('fonts/porter-sans-inline-block-webfont'), url('fonts/porter-sans-inline-block.woff') format('woff');
+}
+
+
+@layer base {
+
+  /*------------------- UNIVERSAL STYLES ------------------- */
+  body, p, li {
+    font-family: var(--font-bungeeFont);
+  }
+
+  /*------------------- UNIVERSAL COLORS ------------------- */
+  /*------------------- EIGHTBIT STYLES ------------------- */
+  .theme-eightbit {
+    --color-primary: 79, 70, 229;
+    /* poppin purlple rgba(79,70,229,1.0) #4f46e5 */
+    --color-secondary: 199, 210, 254;
+    /* lavender rgba(199, 210, 254, 1.0) #c7d2fe */
+    --color-background: 0, 0, 0;
+    /*black background */
+    --color-button: 79, 70, 229;
+    /* poppin purple rgba(79,70,229,1.0) #4f46e5 */
+    --color-buttonHover: 132, 204, 22;
+    /* lime-green #84cc16 rgba(132, 204, 22, 1.0)*/
+    --color-highlight: 132, 204, 22;
+    /* lime-green #84cc16 rgba(132, 204, 22, 1.0)*/
+    /* font-family: var(--font-pressStartFont); */
+
+  }
+  .theme-eightbit button,
+  .theme-eightbit a,
+  .theme-eightbit {
+    cursor: url("./svg/pointer.svg"), url("./png/pointer.png"), auto
+  }
+
+  .theme-eightbit h1
+
+  {
+    font-family: var(--font-pressStartFont);
+  }
+
+
+  /*------------------- WESANDERSON STYLES ------------------- */
+  .theme-wes {
+    --color-primary: 155, 45, 32;
+    /* rusty-red rgba(155,45,32,1.0) #9b2d20 */
+    --color-background: 1241, 161, 66;
+    /* mustard-yellow rgba(241,161,66,1.0) #f1a142 */
+    --color-button: 155, 45, 32;
+    /*rusty-red rgba(155,45,32,1.0) #9b2d20 */
+    --color-buttonHover: 129,34,22; 
+    /* dark rust #812216 rgba(129,34,22,1.0) */
+   
+    --color-highlight: 254,230,167;
+      /* yellow white #FEE6A7 rgba(254,230,167,1.0) */
+
+    /* sky-blue #1accf4 rgba(26,204,244,1.0) */
+     /* muddy-blue #6384b9 rgba(99,132,185,1.0) */
+    /* forest-green #047727 rgba(4,119,39,1.0)*/
+    /* muddy-blue #6384b9 rgba(99,132,185,1.0) */
+    
+    font-family: 'porter-sans-inline-block-webfont', 'Times New Roman', Times, serif;
+  }
+  .theme-wes button,
+  .theme-wes {
+    cursor: url("./svg/wes-cursor.svg"), url("./png/wes-cursor.png"), auto;
+  }
+  .theme-wes button {
+    font-family: var(--font-bungeeFont);
+  }
+
+  
+}
+.bungee {
+  font-family: var(--font-bungeeFont);
+}
+.sacramento {
+  font-family: var(--font-Sacramento);
+}
+p {
+  font-family: var(--font-Jost);
+}
+@layer utilities {
+  .cosmic {
+    /* filter: contrast(140%) brightness(700%); */
+    background: linear-gradient(360deg,
+        rgba(35, 0, 69, 0.98),
+        rgba(0, 0, 0, 100));
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}

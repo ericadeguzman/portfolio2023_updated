@@ -1,0 +1,76 @@
+html {
+  scroll-padding-top: 4rem;
+  scroll-snap-type: y mandatory;
+}
+.edg--container {
+  margin: 8px;
+  scroll-snap-type: y mandatory;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+body {
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.sway--box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8px 0px;
+  scroll-snap-align: start;
+  padding: 4rem 1rem;
+  border: 1px solid $light-grey;
+  background-color: #29aae2;
+  @include breakpoint(1400px) {
+    height: calc(100dvh - 74px);
+  }
+}
+
+.sway {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  @include md {
+    flex-direction: row;
+  }
+}
+.swayscreens {
+  width: 100%;
+  @include md {
+    width: 50%;
+  }
+}
+.swaylogo {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  width: 100%;
+  h1 {
+    color: white;
+    font-size: 4rem;
+  }
+  p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  img {
+    max-width: 150px;
+  }
+  @include md {
+    width: 35%;
+  }
+}
+// .borderbox {
+//   padding: 1rem;
+//   margin: 1rem;
+//   border: 1px solid white;
+// }

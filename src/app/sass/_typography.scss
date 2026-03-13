@@ -1,0 +1,61 @@
+$font-stack: var(--font-PlusJakarta), sans-serif;
+$Vollkorn: "--font-Vollkorn";
+$sacramento: "--font-Sacramento";
+$synco: "--font-synco";
+.text-shadow {
+  text-shadow: 1px 2px 3px black;
+}
+.cbt-table {
+  font-family: $font-stack;
+}
+
+// .display {
+//   font-family: $Cera;
+//   color: $dark-grey;
+//   font-weight: 700;
+//   font-size: 2.75rem; //44px
+//   line-height: 1.2;
+//   letter-spacing: -0.05em;
+//   @include sm {
+//     font-size: 4rem; //64px
+//   }
+// }
+// h1 {
+//   font-family: $Cera;
+//   color: $dark-grey;
+//   font-weight: 700;
+//   font-size: 2rem; //32px
+//   line-height: 1.2;
+//   // letter-spacing: -0.05em;
+//   @include sm {
+//     font-size: 2.75rem; //44px
+//   }
+// }
+// h2 {
+//   font-family: $Vollkorn;
+//   font-weight: 800;
+//   font-size: 1.75rem; //44px
+//   line-height: 2rem;
+//   @include md {
+//     font-size: 2.75rem; //44px
+//     line-height: 3rem;
+//   }
+// }
+// h3 {
+//   font-family: $font-stack;
+//   font-weight: 700;
+//   font-size: 1.5rem; //24px
+//   line-height: 1.8rem;
+//   letter-spacing: -0.025em;
+//   color: $dark-grey;
+// }
+// p {
+//   font-family: $font-stack;
+//   font-weight: 200;
+//   font-size: 1rem; //16px
+//   letter-spacing: 0.02em;
+// }
+// .label {
+//   font-family: $font-stack;
+//   font-size: 0.75rem;
+// }

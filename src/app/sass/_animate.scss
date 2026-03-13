@@ -1,0 +1,276 @@
+html {
+  scroll-behavior: smooth;
+}
+.helloworld {
+  color: white;
+  font-size: 20px;
+}
+.word {
+  opacity: 0.2;
+  // filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
+}
+.word2container {
+  height: 50px;
+  // border: 1px solid #fff;
+}
+.word2 {
+  opacity: 0.4;
+  color: white;
+  font-size: 40px;
+}
+.word3 {
+  opacity: 0.5;
+  color: white;
+  font-size: 50px;
+}
+
+/* styles.css */
+
+// =========================== PARALLAX  =========================== //
+// .parallax-section {
+//   width: 200px;
+//   height: 400px;
+//   border: 1px red solid;
+//   position: relative;
+//   overflow: hidden;
+// }
+// .parallax-bg {
+//   background-image: url("../images/cbt/itin.png");
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 800px;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   z-index: 0; /* Ensure the background is behind the content */
+// }
+
+// .animate-scroll {
+//   animation: backgroundPositionY;
+// }
+
+// #test {
+//   transition: background-position-y 0.5s ease; /* Adjust the duration and easing as needed */
+// }
+
+// #test.scrolling {
+//   background-position-y: 100%;
+// }
+@keyframes backgroundPositionY {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.content {
+  position: relative;
+  z-index: 1; /* Ensure the content is above the background */
+}
+.reflect {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, right top, right
+        bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
+}
+// =========================== CAROUSEL SNAP =========================== //
+.container-carousel {
+  overflow: hidden;
+}
+.carousel {
+  // scroll-snap-type: x mandatory;
+  scroll-padding: 0 24px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+.carousel-item {
+  // scroll-snap-align: start;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include md {
+    min-width: 400px;
+  }
+}
+.carousel-item-lg {
+  scroll-snap-align: start;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include md {
+    min-width: 500px;
+  }
+}
+.carousel-item-xlg {
+  scroll-snap-align: start;
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include lg {
+    min-width: 500px;
+  }
+}
+// =========================== Slide Fade In ===========================//
+
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    view-timeline-name: --item-timeline;
+    animation: slide-fade-in both;
+    animation-timeline: --item-timeline;
+    animation-range: contain 0% contain 50%;
+  }
+}
+
+// =========================== PARALLAX ===========================//
+.wrapper {
+  height: 100%;
+  // height: 1000px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+// .foreground {
+//   transform: translateZ(-5px) scale(1.5);
+// }
+.background {
+  position: absolute;
+  margin-top: -100px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hidden-animate {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show-animation {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+
+.hidden-bottom {
+  opacity: 1;
+  filter: blur(0px);
+}
+.animate-bottom {
+  animation: slideInFromBottom forwards;
+}
+
+.hidden-animate-slideInFromRight {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.animate-slideInFromRight {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  // animation: slideInFromRight forwards;
+}
+.pulse {
+  animation: 2s ease-in-out pulse;
+}
+.hidden-blur-animate {
+  opacity: 0;
+  filter: blur(5px);
+}
+.blur-animation {
+  opacity: 1;
+  filter: blur(0px);
+  transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transform: none;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  10% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+// =========================== NEON LIGHTS =========================== //
+.neon-name {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  // font-size: 2rem;
+  // animation: pulsate 1.5s infinite alternate;
+  // border: 1px solid #fff;
+  // border-radius: 2rem;
+  // padding: 1rem;
+  // box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+  //   0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  // background-color: #010a01;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
+      0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+      0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}

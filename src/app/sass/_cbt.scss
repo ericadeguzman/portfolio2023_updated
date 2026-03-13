@@ -1,0 +1,54 @@
+#cbt::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+#cbt {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.stripe-cbt {
+  color: white;
+  background: repeating-linear-gradient(
+    30deg,
+    #1f2532,
+    #1f2532 10px,
+    #1a202b 10px,
+    #1a202b 20px
+  );
+}
+
+/* --------------------------  UNIVERSAL .cbt-table  STYLES  -------------------------- */
+.cbt-table th,
+.cbt-table td {
+  padding: 12px;
+}
+/*sticky header */
+.cbt-table thead {
+  position: sticky;
+  top: 0;
+}
+/*text overflow ellipsis*/
+.cbt-table th p,
+.cbt-table td p {
+  min-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*styles the .cbt-table  scroll bar */
+.customScrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.customScrollbar::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 20px;
+  color: white;
+}

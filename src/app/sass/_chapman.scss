@@ -1,0 +1,220 @@
+/*=========================================== DEVICE CONTAINER STYLES ===========================================*/
+/*----------------- Chapman news section -----------------*/
+.chapman--fullbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px 0px;
+  scroll-snap-align: start;
+  padding: 16px 24px 17px;
+  border: 1px solid $light-grey;
+  // height: calc(100dvh - 74px);
+  @include lg {
+    justify-content: flex-start;
+  }
+}
+.stripes-red {
+  color: white;
+  background: repeating-linear-gradient(
+    30deg,
+    #a50034,
+    #a50034 10px,
+    #970231 10px,
+    #970231 20px
+  );
+}
+#chapman-news {
+  align-items: flex-end;
+  @include md {
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.text-description-box h2 {
+  color: #766558;
+}
+// .background {
+//   // transform: translateZ(-10px) scale(2);
+// }
+.fowler-bg {
+  background-image: url("../images/chapman/fowler-engineering.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.deviceset {
+  width: 100%;
+  font-size: 54.3125vw;
+  position: relative;
+  display: flex;
+  @include sm {
+    font-size: 50.3125vw;
+  }
+  @include breakpoint(800px) {
+    font-size: 36.3125vw;
+  }
+}
+.device-desktop {
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+  height: 0.7em;
+  left: 10%;
+  @include md {
+    height: 1em;
+  }
+}
+.device-tablet {
+  width: 30%;
+  height: 0.6em;
+  left: 51%;
+  @include md {
+    height: 0.9em;
+  }
+}
+.device-mobile {
+  width: 10%;
+  height: 0.3em;
+  left: 80%;
+  @include md {
+    height: 0.5em;
+  }
+}
+
+.deviceset .device-desktop,
+.deviceset .device-tablet,
+.deviceset .device-mobile {
+  box-sizing: border-box;
+  background-size: cover;
+  background-attachment: local;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+  overflow: scroll;
+  color: transparent;
+  background-color: white;
+}
+
+.device-controls1 {
+  content: "";
+  // width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid $light-grey;
+  height: 14px;
+  @include md {
+    height: 20px;
+  }
+}
+.device-controls {
+  top: 0;
+  content: "";
+  position: sticky;
+  width: 100%;
+  display: block;
+  background-color: $white;
+  border-bottom: 1px solid $light-grey;
+  height: 14px;
+  @include md {
+    height: 20px;
+  }
+}
+@mixin device-controlM {
+  background-color: white;
+  position: sticky;
+  width: 100%;
+  display: block;
+  background-color: $white;
+  @include md {
+    height: 3%;
+  }
+}
+.mobile-device {
+  padding: 2% 0 1%;
+  border: 1px solid $light-grey;
+  border-radius: 10px;
+  background-color: white;
+}
+.device-controlsM {
+  @include device-controlM;
+  top: 0;
+  border-bottom: 1px solid $light-grey;
+}
+.device-controlsM-bottom {
+  @include device-controlM;
+  bottom: 0;
+  border-top: 1px solid $light-grey;
+}
+//DEVICE desktop CONTROL STYLES ===========================================
+@mixin device-control {
+  position: absolute;
+  content: "";
+  border-radius: 100%;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 5px;
+  height: 5px;
+  @include md {
+    border: 1px solid $light-grey;
+    width: 10px;
+    height: 10px;
+  }
+}
+.device-control1::before {
+  @include device-control;
+  background: red;
+  left: 5px;
+  @include md {
+    left: 5px;
+  }
+}
+.device-control2::before {
+  @include device-control;
+  background: yellow;
+  left: 12px;
+  @include md {
+    left: 20px;
+  }
+}
+.device-control3::before {
+  @include device-control;
+  background: lightgreen;
+  left: 19px;
+  @include md {
+    left: 35px;
+  }
+}
+
+#chapman-carousel::-webkit-scrollbar,
+#desktop::-webkit-scrollbar,
+#tablet::-webkit-scrollbar,
+#mobile::-webkit-scrollbar {
+  display: none;
+}
+
+#chapman-carousel,
+#desktop,
+#tablet,
+#mobile {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+// chapman carousel
+// #chapman-carousel li:nth-child(2) {
+//   transition-delay: 200ms;
+// }
+// #chapman-carousel li:nth-child(3) {
+//   transition-delay: 400ms;
+// }
+// #chapman-carousel li:nth-child(4) {
+//   transition-delay: 600ms;
+// }
+// #chapman-carousel li:nth-child(5) {
+//   transition-delay: 800ms;
+// }
+// #chapman-carousel li:nth-child(6) {
+//   transition-delay: 1000ms;
+// }

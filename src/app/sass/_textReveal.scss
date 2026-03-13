@@ -1,0 +1,59 @@
+// *,
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+:root {
+  --backgroundColor: #fef852;
+  --backgroundColorSecondary: #fffc94;
+  --textPrimaryColor: #2a2a2a;
+
+  --darkBlack: 
+  --darkBlack: #171717;
+
+  --headlineBig: clamp(3rem, 5vw, 6rem);
+  --headlineSmall: clamp(1rem, 1.2vw, 6rem);
+}
+
+// body {
+//   font-family: "Montserrat", sans-serif;
+//   background-color: var(--backgroundColor);
+// }
+
+
+// PERSPECTIVE 
+
+
+
+
+
+
+.reveal {
+  background: black;
+  padding:0 10%;
+}
+
+.reveal-text {
+  font-weight: 800;
+  font-size: var(--headlineBig);
+  line-height: var(--headlineBig);
+  color: black;
+  filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
+}
+
+.spacing-small {
+  height: 50vh;
+}
+
+.spacing {
+  height: 100vh;
+}
+
+@media screen and (max-width: 500px) {
+  .reveal {
+    padding-left: 10px;
+  }
+}

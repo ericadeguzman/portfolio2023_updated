@@ -1,0 +1,65 @@
+/*----------------- NAV COMPONENT -----------------*/
+
+.nav {
+  border: 1px solid $light-grey;
+  padding: 16px 24px 16px;
+  margin: 0px 8px;
+  background-color: $white;
+  align-items: center;
+  flex-direction: column;
+  @include sm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  li {
+    font-size: 0.88rem;
+    a {
+      display: block;
+    }
+  }
+}
+.nav-box {
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+
+.nav-links ul {
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 16px;
+  @include sm {
+    margin-top: 0px;
+    justify-content: space-between;
+  }
+}
+.nav-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  @include sm {
+    justify-content: flex-start;
+  }
+}
+.nav-link-item a:hover {
+  color: $brand;
+  font-weight: bold;
+}
+.nav-link-item {
+  color: $grey;
+
+}
+.nav-link-active {
+  font-weight: bold;
+  color: $brand;
+}
