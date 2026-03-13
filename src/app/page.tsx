@@ -16,6 +16,7 @@ import JavascriptText from "./components/gsap/JavasriptText";
 import TailwindText from "./components/gsap/TailwindText";
 import GSAPtext from "./components/gsap/GSAPtext";
 import FigmaText from "./components/gsap/FigmaText";
+import MusicPlayer from "./components/MusicPlayer";
 
 export default function Home() {
   const [theme, setTheme] = useState(false);
@@ -47,12 +48,8 @@ export default function Home() {
   //
   return (
     <div>
-      <div id="player" className="flex flex-row justify-start h-full p-6">
-        <script
-          src="https://cdn.commoninja.com/sdk/latest/commonninja.js"
-          defer
-        ></script>
-        <div className="commonninja_component pid-7a5a1656-5098-444d-9ce2-e04cf8d3ba00"></div>
+      <div className="flex justify-start items-center p-6">
+        <MusicPlayer />
       </div>
       <div className={theme ? "theme-wes" : "theme-eightbit"}>
         <section className="h-screen grid-header">
