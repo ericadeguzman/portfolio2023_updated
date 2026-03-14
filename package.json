@@ -2,6 +2,9 @@
   "name": "portfolio2023",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,7 +21,7 @@
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
-    "next": "^14.0.4-canary.7",
+    "next": "14.2.35",
     "next-videos": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
