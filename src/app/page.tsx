@@ -48,11 +48,11 @@ export default function Home() {
   return (
     <div>
       <div className={theme ? "theme-wes" : "theme-eightbit"}>
-        <section className="h-screen grid-header">
-          <div></div>
-          <div className="flex justify-center items-start gap-8 tablet:gap-12">
-            {/* Portrait with tape effect, slightly angled, left of title */}
-            <div className="relative pt-[20%] shrink-0">
+        <section className="h-screen grid-header grid-cols-1 tablet:grid-cols-[10%_1fr_10%]">
+          <div className="hidden tablet:block" aria-hidden />
+          <div className="flex flex-col items-center justify-center gap-6 tablet:flex-row tablet:justify-center tablet:items-start tablet:gap-12">
+            {/* Portrait with tape effect, slightly angled, left of title on tablet+ */}
+            <div className="relative pt-[20%] tablet:pt-[20%] shrink-0">
               <div className="relative -rotate-6 overflow-visible">
                 <img
                   src="/erica-portrait.png"
@@ -70,21 +70,20 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div id="header-box" className="pt-[20%]">
-              <div className="flex">
+            <div id="header-box" className="pt-0 tablet:pt-[20%] flex flex-col items-center tablet:items-start">
+              <div className="flex flex-col items-center tablet:flex-row">
                 <div id="designer-header">
-                  <h2 className="text-[#673ffb] sacramento header-designer">
+                  <h2 className="text-[#673ffb] sacramento header-designer text-center tablet:text-left">
                     designer
                   </h2>
                 </div>
-                <div id="myname-header" className="w-[400px] ml-[10px] ">
-                  <h2 className="text-white header-name">
-                    erica <br />
-                    de guzman
+                <div id="myname-header" className="w-full max-w-[400px] tablet:w-[400px] tablet:ml-[10px] tablet:max-w-none">
+                  <h2 className="text-white header-name text-center tablet:text-left">
+                    erica de guzman
                   </h2>
                 </div>
               </div>
-              <div id="developer-header" className="tablet:ml-[120px]">
+              <div id="developer-header" className="tablet:ml-[120px] text-center tablet:text-left">
                 <h1 className="text-[#03dc2c] header-developer tablet:mt-[-1%]">
                   Developer
                 </h1>

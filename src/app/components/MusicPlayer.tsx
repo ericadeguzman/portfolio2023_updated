@@ -18,6 +18,10 @@ export default function MusicPlayer() {
 
   const track = tracks[currentIndex];
 
+  const handleAudioError = () => {
+    setIsPlaying(false);
+  };
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -80,43 +84,43 @@ export default function MusicPlayer() {
     return `${m}:${sec.toString().padStart(2, "0")}`;
   };
 
-  if (tracks.length === 0) return null;
+  if (tracks.length === 0 || !track) return null;
 
   return (
     <div
       id="player"
-      className="flex flex-col w-full max-w-md rounded-lg bg-black/60 border border-white/10 overflow-hidden"
+      className="flex flex-col w-full max-w-md rounded-lg bg-black/60 border border-white/10 overflow-hidden sm:max-w-full sm:min-w-0 sm:w-full"
     >
-      <audio ref={audioRef} src={track.src} preload="metadata" />
+      <audio ref={audioRef} src={track.src} preload="metadata" onError={handleAudioError} />
 
       {/* Song track: visualizer same width as progress bar */}
-      <div className="w-full px-4">
-        <div className="w-full min-h-[72px] bg-black/40 overflow-hidden">
-          <AudioVisualizer isPlaying={isPlaying} className="w-full h-full min-h-[72px]" />
+      <div className="w-full px-4 sm:px-2 min-w-0">
+        <div className="w-full min-h-[72px] sm:min-h-[56px] bg-black/40 overflow-hidden">
+          <AudioVisualizer isPlaying={isPlaying} className="w-full h-full min-h-[72px] sm:min-h-[56px]" />
         </div>
-        {/* Progress bar directly under visualizer (same px-4) */}
-        <div className="w-full flex items-center gap-2 mt-2 bg-black/30 py-2">
+        {/* Progress bar directly under visualizer (same padding) */}
+        <div className="w-full flex items-center gap-2 mt-2 sm:gap-1.5 sm:mt-1.5 sm:py-1.5 bg-black/30 py-2 min-w-0">
           <input
             type="range"
             min={0}
             max={100}
             value={progress}
             onChange={seek}
-            className="flex-1 h-1.5 rounded-full appearance-none bg-white/20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#03dc2c] cursor-pointer"
+            className="flex-1 min-w-0 h-1.5 rounded-full appearance-none bg-white/20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#03dc2c] cursor-pointer"
           />
-          <span className="text-white/60 text-xs tabular-nums shrink-0 w-16 text-right">
+          <span className="text-white/60 text-xs sm:text-[10px] sm:w-12 tabular-nums shrink-0 w-16 text-right">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
         </div>
       </div>
 
       {/* Playback controls directly underneath the track */}
-      <div className="flex flex-row items-center gap-3 px-4 pb-4 pt-3 w-full">
-        <div className="flex items-center gap-2 shrink-0">
+      <div className="flex flex-row items-center gap-3 px-4 pb-4 pt-3 w-full min-w-0 sm:gap-2 sm:px-2 sm:pb-3 sm:pt-2 overflow-hidden">
+        <div className="flex items-center gap-2 shrink-0 sm:gap-1">
           <button
             type="button"
             onClick={() => goTo(currentIndex - 1)}
-            className="p-1.5 rounded-full text-white/80 hover:text-[#03dc2c] hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded-full text-white/80 hover:text-[#03dc2c] hover:bg-white/10 transition-colors sm:p-1"
             aria-label="Previous track"
           >
             <SkipBack size={24} weight="fill" />
@@ -124,7 +128,7 @@ export default function MusicPlayer() {
           <button
             type="button"
             onClick={() => setIsPlaying(!isPlaying)}
-            className="p-2 rounded-full bg-[#03dc2c] text-black hover:bg-[#02b824] transition-colors"
+            className="p-2 rounded-full bg-[#03dc2c] text-black hover:bg-[#02b824] transition-colors sm:p-1.5"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isPlaying ? (
@@ -136,15 +140,15 @@ export default function MusicPlayer() {
           <button
             type="button"
             onClick={() => goTo(currentIndex + 1)}
-            className="p-1.5 rounded-full text-white/80 hover:text-[#03dc2c] hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded-full text-white/80 hover:text-[#03dc2c] hover:bg-white/10 transition-colors sm:p-1"
             aria-label="Next track"
           >
             <SkipForward size={24} weight="fill" />
           </button>
         </div>
 
-        <div className="flex-1 min-w-0">
-          <p className="text-white text-sm font-medium truncate">
+        <div className="flex-1 min-w-0 overflow-hidden">
+          <p className="text-white text-sm font-medium truncate sm:text-xs">
             {track.title}
             {track.artist && (
               <span className="text-white/60 font-normal"> · {track.artist}</span>
@@ -152,8 +156,8 @@ export default function MusicPlayer() {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <FontAwesomeIcon icon={faVolumeHigh} className="text-white/80 w-4 h-4" aria-hidden />
+        <div className="flex items-center gap-2 shrink-0 sm:gap-1">
+          <FontAwesomeIcon icon={faVolumeHigh} className="text-white/80 w-4 h-4 sm:w-3.5 sm:h-3.5" aria-hidden />
           <input
             type="range"
             min={0}
@@ -161,7 +165,7 @@ export default function MusicPlayer() {
             step={0.05}
             value={volume}
             onChange={(e) => setVolume(parseFloat(e.target.value))}
-            className="w-14 h-1 rounded-full appearance-none bg-white/20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#673ffb] cursor-pointer"
+            className="w-14 h-1 sm:w-10 rounded-full appearance-none bg-white/20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#673ffb] cursor-pointer"
             aria-label="Volume"
           />
         </div>

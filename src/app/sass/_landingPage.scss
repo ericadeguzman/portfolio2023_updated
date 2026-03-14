@@ -12,7 +12,10 @@
 
 .grid-header {
   display: grid;
-  grid-template-columns: 10% auto 10%;
+  grid-template-columns: 1fr; /* mobile: single column so content is full width and can center */
+  @media (min-width: 640px) {
+    grid-template-columns: 10% auto 10%;
+  }
 }
 
 .dev-header-container {

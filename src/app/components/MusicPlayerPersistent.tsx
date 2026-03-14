@@ -25,17 +25,17 @@ export default function MusicPlayerPersistent() {
 
       {/* Player always in DOM so audio keeps playing; hidden via CSS when collapsed */}
       <div
-        className={`fixed bottom-0 left-0 z-50 p-4 flex flex-row items-end gap-0 pointer-events-none transition-transform duration-300 ${
+        className={`fixed bottom-0 left-0 z-50 p-4 flex flex-row items-end gap-0 pointer-events-none transition-transform duration-300 sm:left-0 sm:right-0 sm:w-full sm:max-w-[100vw] sm:box-border sm:px-2 sm:pb-2 sm:pt-2 ${
           isVisible ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="pointer-events-auto">
+        <div className="pointer-events-auto min-w-0 sm:flex-1 sm:flex sm:justify-center sm:min-w-0 sm:overflow-hidden">
           <MusicPlayer />
         </div>
         <button
           type="button"
           onClick={() => setIsVisible(false)}
-          className="pointer-events-auto flex items-center justify-center w-10 h-14 rounded-r-md rounded-l-none border border-l-0 border-white/20 bg-black/60 text-white/70 hover:text-white hover:bg-black/80 transition"
+          className="pointer-events-auto flex items-center justify-center w-10 h-14 sm:w-9 sm:h-12 rounded-r-md rounded-l-none border border-l-0 border-white/20 bg-black/60 text-white/70 hover:text-white hover:bg-black/80 transition shrink-0"
           aria-label="Hide music player"
         >
           <CaretLeft size={20} weight="bold" />
