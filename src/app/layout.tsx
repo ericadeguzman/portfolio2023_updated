@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="en">
       <body
         className={`${pressStart.variable} ${bungeeFont.variable} ${PlusJakarta.variable} ${SacramentoFont.variable} ${SyncoFont.variable}  ${JostFont.variable} bg-black`}
       >
