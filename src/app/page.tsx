@@ -47,18 +47,30 @@ export default function Home() {
   //
   return (
     <div>
-      <div id="player" className="flex flex-row justify-start h-full p-6">
-        <script
-          src="https://cdn.commoninja.com/sdk/latest/commonninja.js"
-          defer
-        ></script>
-        <div className="commonninja_component pid-7a5a1656-5098-444d-9ce2-e04cf8d3ba00"></div>
-      </div>
       <div className={theme ? "theme-wes" : "theme-eightbit"}>
         <section className="h-screen grid-header">
           <div></div>
-          <div className="flex justify-center">
-            <div id="header-box" className="mt-[50%] tablet:mt-[12%]">
+          <div className="flex justify-center items-start gap-8 tablet:gap-12">
+            {/* Portrait with tape effect, slightly angled, left of title */}
+            <div className="relative pt-[20%] shrink-0">
+              <div className="relative -rotate-6 overflow-visible">
+                <img
+                  src="/erica-portrait.png"
+                  alt="Erica"
+                  className="relative z-0 block w-28 h-28 tablet:w-36 tablet:h-36 object-cover rounded-sm border border-white/20 shadow-lg bg-black/20"
+                />
+                {/* Single tape at top of photo, horizontal strip with ragged edges */}
+                <div
+                  className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 z-10 shadow-sm"
+                  style={{
+                    backgroundColor: 'rgba(254, 243, 199, 0.72)',
+                    clipPath: 'polygon(0% 12%, 8% 8%, 16% 12%, 24% 6%, 32% 10%, 40% 8%, 48% 12%, 56% 6%, 64% 10%, 72% 8%, 80% 12%, 88% 6%, 96% 10%, 100% 8%, 98% 92%, 90% 94%, 82% 90%, 74% 94%, 66% 90%, 58% 94%, 50% 90%, 42% 94%, 34% 90%, 26% 94%, 18% 90%, 10% 94%, 2% 92%, 0% 12%)',
+                  }}
+                  aria-hidden
+                />
+              </div>
+            </div>
+            <div id="header-box" className="pt-[20%]">
               <div className="flex">
                 <div id="designer-header">
                   <h2 className="text-[#673ffb] sacramento header-designer">
@@ -78,7 +90,6 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            <div></div>
           </div>
 
           <div className="flex absolute bottom-[2%] right-[4%] tablet:bottom-[4%] tablet:right-[10%]">
