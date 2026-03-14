@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-const BAR_COUNT = 64;
+const BAR_COUNT = 128;
 
 export default function AudioVisualizer({ isPlaying, className = "" }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -45,9 +45,15 @@ export default function AudioVisualizer({ isPlaying, className = "" }: Props) {
       for (let i = 0; i < BAR_COUNT; i++) {
         let h: number;
         if (isPlaying) {
-          const wave = Math.sin(t * 2 + i * 0.4) * 0.5 + Math.sin(t * 3.1 + i * 0.2) * 0.3;
-          h = height * (0.15 + 0.7 * (wave * 0.5 + 0.5));
-          h = Math.max(6, h);
+          // Multiple overlapping waves + product terms for more random, less uniform motion
+          const w1 = Math.sin(t * 1.7 + i * 0.31) * 0.5 + 0.5;
+          const w2 = Math.sin(t * 2.9 - i * 0.47) * 0.5 + 0.5;
+          const w3 = Math.sin(t * 4.3 + i * 0.19) * 0.5 + 0.5;
+          const w4 = Math.sin(t * 0.7 + i * 0.53) * 0.5 + 0.5;
+          const mix = (w1 * 0.4 + w2 * 0.3 + w3 * 0.2 + w4 * 0.1);
+          const bump = 0.85 + 0.15 * Math.sin(t * 2.3 + i * 1.7); // per-bar variation
+          h = height * (0.12 + 0.75 * mix * bump);
+          h = Math.max(4, h);
         } else {
           h = height * 0.08 * (0.4 + 0.6 * Math.sin(t * 0.8 + i * 0.3) ** 2);
         }

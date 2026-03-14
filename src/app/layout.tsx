@@ -9,6 +9,7 @@ import {
   Jost,
 } from "next/font/google";
 import "./main.scss";
+import MusicPlayerPersistent from "./components/MusicPlayerPersistent";
 
 const JostFont = Jost({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
         className={`${pressStart.variable} ${bungeeFont.variable} ${PlusJakarta.variable} ${SacramentoFont.variable} ${SyncoFont.variable}  ${JostFont.variable} bg-black`}
       >
         {children}
+        <MusicPlayerPersistent />
       </body>
     </html>
   );

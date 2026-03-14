@@ -89,13 +89,13 @@ export default function MusicPlayer() {
     >
       <audio ref={audioRef} src={track.src} preload="metadata" />
 
-      {/* Song track: visualizer spans full width of player */}
-      <div className="w-full">
+      {/* Song track: visualizer same width as progress bar */}
+      <div className="w-full px-4">
         <div className="w-full min-h-[72px] bg-black/40 overflow-hidden">
           <AudioVisualizer isPlaying={isPlaying} className="w-full h-full min-h-[72px]" />
         </div>
-        {/* Progress bar directly under visualizer */}
-        <div className="w-full flex items-center gap-2 mt-2 bg-black/30 px-4 py-2">
+        {/* Progress bar directly under visualizer (same px-4) */}
+        <div className="w-full flex items-center gap-2 mt-2 bg-black/30 py-2">
           <input
             type="range"
             min={0}
