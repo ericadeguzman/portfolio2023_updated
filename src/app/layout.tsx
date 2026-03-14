@@ -45,7 +45,7 @@ const PlusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Erica 2023",
-  description: "Erica De Guzman's 2023 Porfolio",
+  description: "Erica De Guzman's 2023 Portfolio",
   icons: {
     icon: "/favicon.svg",
   },
