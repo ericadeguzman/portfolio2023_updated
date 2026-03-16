@@ -9,13 +9,14 @@ import { ArrowFatRight, Gear } from "@phosphor-icons/react";
 import GitHub from "./svg/github.svg";
 import Instagram from "./svg/insta.svg";
 import LinkedIn from "./svg/linkedin.svg";
-import ReactText from "./components/gsap/ReactText";
-import HTMLtext from "./components/gsap/HTMLtext";
 import CSStext from "./components/gsap/CSStext";
-import JavascriptText from "./components/gsap/JavasriptText";
-import TailwindText from "./components/gsap/TailwindText";
-import GSAPtext from "./components/gsap/GSAPtext";
 import FigmaText from "./components/gsap/FigmaText";
+import GSAPtext from "./components/gsap/GSAPtext";
+import HTMLtext from "./components/gsap/HTMLtext";
+import JavascriptText from "./components/gsap/JavasriptText";
+import ReactText from "./components/gsap/ReactText";
+import TailwindText from "./components/gsap/TailwindText";
+import TypeScriptText from "./components/gsap/TypeScript";
 
 export default function Home() {
   const [theme, setTheme] = useState(false);
@@ -50,9 +51,9 @@ export default function Home() {
       <div className={theme ? "theme-wes" : "theme-eightbit"}>
         <section className="h-screen grid-header grid-cols-1 tablet:grid-cols-[10%_1fr_10%]">
           <div className="hidden tablet:block" aria-hidden />
-          <div className="flex flex-col items-center justify-center gap-6 tablet:flex-row tablet:justify-center tablet:items-start tablet:gap-12">
+          <div className="flex flex-col items-center justify-start gap-6 pt-[30vh] tablet:justify-center tablet:pt-0 tablet:flex-row tablet:items-start tablet:gap-12">
             {/* Portrait with tape effect, slightly angled, left of title on tablet+ */}
-            <div className="relative pt-[20%] tablet:pt-[20%] shrink-0">
+            <div className="relative pt-0 tablet:pt-[20%] shrink-0">
               <div className="relative -rotate-6 overflow-visible">
                 <img
                   src="/erica-portrait.png"
@@ -99,13 +100,14 @@ export default function Home() {
           </div>
         </section>
         <div className="h-screen px-[4%] mt-[10%] tablet:px-[10%]">
-          <HTMLtext />
           <CSStext />
+          <FigmaText />
+          <GSAPtext />
+          <HTMLtext />
           <JavascriptText />
           <ReactText />
           <TailwindText />
-          <GSAPtext />
-          <FigmaText />
+          <TypeScriptText />
         </div>
         <main className="h-screen bg-skin-background text-skin-primary flex flex-col justify-between">
           <div className="mt-[3%] flex flex-col justify-end">

@@ -15,8 +15,8 @@ export const tracks: Track[] = [
   // Example: { title: "Song name", artist: "Artist", src: "/music/track1.mp3" },
   // Or from the web: { title: "Track", artist: "Artist", src: "https://example.com/song.mp3" },
   {
-    title: "Add your tracks",
-    artist: "Edit src/app/data/tracks.ts",
+    title: "Beep Boop",
+    artist: "Robots",
     src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
   },
   {
