@@ -12,7 +12,7 @@ export default function Back(props: Props) {
   const {} = props;
 
   return (
-    <div className="flex flex-row justify-center mt-[4%]">
+    <div className="flex flex-row justify-center mt-[4%] pt-14">
       <div className="animate-bounce">
         <Link
           className={`bungee flex flex-row justify-center text-[${props.color}]`}
