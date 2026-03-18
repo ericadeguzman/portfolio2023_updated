@@ -180,55 +180,32 @@ export default function Chapman() {
             <h2 className="hidden-animate text-2xl">Chapman University</h2>
             <br />
             <p className="hidden-animate text-[#DDCBA4] text-sm leading-[1rem] tablet:text-lg tablet:leading-[1.5rem]">
-              In my 3.8 years working at Chapman University I have worked on
-              countless college and department websites.{" "}
-            </p>
-            <br />
-            <p className="hidden-animate text-[#DDCBA4] text-sm leading-[1rem] tablet:text-lg tablet:leading-[1.5rem]">
-              At my time there I have designed and developed, websites, cms
-              widgets, wordpress sites, email templates, and landing pages. I
-              was in charge of maintaining styles, meeting accessibilty
-              standards, and most importantly making sure all our sites followed
-              the{" "}
-              <a
+            During my nearly four years at Chapman University, I designed and developed websites, CMS widgets, WordPress sites, email templates, and landing pages across countless colleges and departments — maintaining consistent styles, meeting accessibility standards, and ensuring every deliverable aligned with the Chapman brand. Notable projects included the   
+            &nbsp;<a
                 style={{ textDecoration: "underline" }}
                 href="https://brand.chapman.edu/"
               >
-                Chapman Brand
-              </a>
-              .
-            </p>
-            <br />
-            <p className="hidden-animate text-[#DDCBA4] text-sm leading-[1rem] tablet:text-lg tablet:leading-[1.5rem]">
-              Some of the proejcts I worked on included the
-              <a
-                style={{ textDecoration: "underline" }}
-                href="https://brand.chapman.edu/"
-              >
-                Chapman Brand site
-              </a>
-              , the{" "}
+                The Chapman Brand Site
+              </a>,&nbsp;
               <a
                 style={{ textDecoration: "underline" }}
                 href="https://news.chapman.edu/"
               >
                 Chapman Newsroom
-              </a>
-              , the{" "}
+              </a>,&nbsp;
               <a
                 style={{ textDecoration: "underline" }}
                 href="https://news.chapman.edu/magazine/"
               >
                 Chapman Magazine site
-              </a>
-              , the{" "}
-              <a
+              </a>,
+            and the&nbsp; 
+            <a
                 href="https://news.chapman.edu/forward/"
                 style={{ textDecoration: "underline" }}
               >
                 Chapman Forward site
               </a>
-              , and many other department and college sites.
             </p>
           </div>
           <div className="max-w-sm mobile-device">

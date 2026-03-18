@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import grid1 from "../images/csuf/grid1.png";
 import grid2 from "../images/csuf/grid2.png";
@@ -18,6 +18,8 @@ import Back from "../components/back";
 import NextBtn from "../components/next";
 
 export default function International() {
+  const [imageExpanded, setImageExpanded] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -202,61 +204,62 @@ export default function International() {
             src={sb4}
           />
         </div>
-        <div className="my-[2%] mx-[5%] flex flex-row justify-center items-center content-center gap-[3%]">
+        <div className="my-[2%] mx-[5%] flex flex-row justify-center items-start gap-[3%]">
           <div>
             <div className="mt-[5%] tablet:mt-[5%]">
               <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg">
-                In my six years at CSUF I have designed and developed numerous
-                sites for CSUF's extended education department. This included
-                International Programs, Study Abroad, Extension programs,
-                Children's Learning, Osher Lifelong Learning, and many more.
-              </p>
-            </div>
-            <div className="mt-[5%] tablet:mt-[5%]">
-              <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg">
-                All the sites I worked on are fully responsive. This meant lots
-                of testing! From mobile devices to desktops, and from browsers
-                to operating systems - we made sure it looked good everywhere!
-                And of course a good percent of our audience used the infamous
-                browsing platform And every developers worse nightmare -
-                Internet Explorer. I don't hate Internet Explorer as it has
-                strengthened my patience and of course my development skills.
-              </p>
-            </div>
-            <div className="mt-[5%] tablet:mt-[5%]">
-              <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg">
-                Cal states universities must pass strict Accessibilty assesments
-                and therefore all the CSUF sites that I worked on had to be
-                fully accessible.
+              Over six years at CSUF, I designed and developed fully responsive, ADA-compliant websites for multiple departments within the Extended Education division — including International Programs, Study Abroad, Extension Programs, Children's Learning, and Osher Lifelong Learning. Every site was rigorously tested across devices, browsers, and operating systems to ensure a consistent experience for all users.
               </p>
             </div>
           </div>
           <div className="international-hp hidden tablet:block">
-            <Image
-              className="w-full laptop:max-w-[600px]"
-              alt="International homepage"
-              src={sb1}
-            />
-            <Image
-              className="w-full laptop:max-w-[600px]"
-              alt="International homepage"
-              src={Llama}
-            />
-            <Image
-              className="w-full laptop:max-w-[600px]"
-              alt="International homepage"
-              src={sb2}
-            />
-            <Image
-              className="w-full laptop:max-w-[600px]"
-              alt="International homepage"
-              src={sb3}
-            />
-            <Image
-              className="w-full laptop:max-w-[600px]"
-              alt="International homepage"
-              src={sb4}
-            />
+            <div
+              className={`relative w-full laptop:max-w-[600px] overflow-hidden transition-[max-height] duration-300 ease-out ${
+                imageExpanded ? "max-h-[5000px]" : "max-h-[450px]"
+              }`}
+            >
+              <Image
+                className="w-full laptop:max-w-[600px]"
+                alt="International homepage"
+                src={sb1}
+              />
+              <Image
+                className="w-full laptop:max-w-[600px]"
+                alt="International homepage"
+                src={Llama}
+              />
+              <Image
+                className="w-full laptop:max-w-[600px]"
+                alt="International homepage"
+                src={sb2}
+              />
+              <Image
+                className="w-full laptop:max-w-[600px]"
+                alt="International homepage"
+                src={sb3}
+              />
+              <Image
+                className="w-full laptop:max-w-[600px]"
+                alt="International homepage"
+                src={sb4}
+              />
+              {!imageExpanded && (
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[10%] min-h-[48px] pointer-events-none"
+                  style={{
+                    background: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)",
+                  }}
+                  aria-hidden
+                />
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={() => setImageExpanded((e) => !e)}
+              className="mt-2 w-full laptop:max-w-[600px] py-2 px-4 rounded border border-white/30 bg-black/60 text-white text-sm font-medium hover:bg-white/10 transition-colors"
+            >
+              {imageExpanded ? "View less" : "Expand to view full image"}
+            </button>
           </div>
         </div>
         <div className="flex justify-between px-[3%] mb-[3%]">
