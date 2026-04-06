@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import grid1 from "../images/csuf/grid1.png";
 import grid2 from "../images/csuf/grid2.png";
@@ -18,8 +18,6 @@ import Back from "../components/back";
 import NextBtn from "../components/next";
 
 export default function International() {
-  const [imageExpanded, setImageExpanded] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -132,13 +130,13 @@ export default function International() {
             alt="ipge grid section"
             src={grid4}
           />
-          <div className="text-center mt-4">
+          {/* <div className="text-center mt-4">
             <button className="animate-bounce text-white border-[#FF7900] mt-1 mb-6 text-sm tablet:text-md padding-10 border px-4 py-2">
               <a href="https://extension.fullerton.edu/international/">
                 Visit CSUF&rsquo;s IPGE
               </a>
             </button>
-          </div>
+          </div> */}
 
           <Image
             className="hidden-blur-animate"
@@ -207,59 +205,46 @@ export default function International() {
         <div className="my-[2%] mx-[5%] flex flex-row justify-center items-start gap-[3%]">
           <div>
             <div className="mt-[5%] tablet:mt-[5%]">
-              <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg">
-              Over six years at CSUF, I designed and developed fully responsive, ADA-compliant websites for multiple departments within the Extended Education division — including International Programs, Study Abroad, Extension Programs, Children's Learning, and Osher Lifelong Learning. Every site was rigorously tested across devices, browsers, and operating systems to ensure a consistent experience for all users.
+              <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg mb-[4%]">
+            
+              During my six years at CSUF, I designed and developed websites for the university's Extended Education department — spanning International Programs, Study Abroad, Extension Programs, Children's Learning, Osher Lifelong Learning, and more.
+              </p>
+              <p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg mb-[4%]">
+
+Every site I built was fully responsive, tested across mobile and desktop, multiple browsers, and various operating systems to ensure a consistent experience everywhere. This included support for Internet Explorer — which, let's just say, has a way of sharpening both your patience and your skills.
+</p>
+<p className="hidden-animate text-white text-base desktop:text-xl text-center tablet:text-right mr-[3%] max-w-lg mb-[4%]">
+
+As a Cal State university, CSUF was also held to strict accessibility standards. Every site I worked on was built to be fully accessible and compliant, which became a core part of how I approach web development to this day.
               </p>
             </div>
           </div>
           <div className="international-hp hidden tablet:block">
-            <div
-              className={`relative w-full laptop:max-w-[600px] overflow-hidden transition-[max-height] duration-300 ease-out ${
-                imageExpanded ? "max-h-[5000px]" : "max-h-[450px]"
-              }`}
-            >
-              <Image
-                className="w-full laptop:max-w-[600px]"
-                alt="International homepage"
-                src={sb1}
-              />
-              <Image
-                className="w-full laptop:max-w-[600px]"
-                alt="International homepage"
-                src={Llama}
-              />
-              <Image
-                className="w-full laptop:max-w-[600px]"
-                alt="International homepage"
-                src={sb2}
-              />
-              <Image
-                className="w-full laptop:max-w-[600px]"
-                alt="International homepage"
-                src={sb3}
-              />
-              <Image
-                className="w-full laptop:max-w-[600px]"
-                alt="International homepage"
-                src={sb4}
-              />
-              {!imageExpanded && (
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-[10%] min-h-[48px] pointer-events-none"
-                  style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)",
-                  }}
-                  aria-hidden
-                />
-              )}
-            </div>
-            <button
-              type="button"
-              onClick={() => setImageExpanded((e) => !e)}
-              className="mt-2 w-full laptop:max-w-[600px] py-2 px-4 rounded border border-white/30 bg-black/60 text-white text-sm font-medium hover:bg-white/10 transition-colors"
-            >
-              {imageExpanded ? "View less" : "Expand to view full image"}
-            </button>
+            <Image
+              className="w-full laptop:max-w-[600px]"
+              alt="International homepage"
+              src={sb1}
+            />
+            <Image
+              className="w-full laptop:max-w-[600px]"
+              alt="International homepage"
+              src={Llama}
+            />
+            <Image
+              className="w-full laptop:max-w-[600px]"
+              alt="International homepage"
+              src={sb2}
+            />
+            <Image
+              className="w-full laptop:max-w-[600px]"
+              alt="International homepage"
+              src={sb3}
+            />
+            <Image
+              className="w-full laptop:max-w-[600px]"
+              alt="International homepage"
+              src={sb4}
+            />
           </div>
         </div>
         <div className="flex justify-between px-[3%] mb-[3%]">
